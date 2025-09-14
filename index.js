@@ -11,6 +11,18 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use((req, res, next) => {
+   const {password} = req.query;
+    if(password === 'secret'){ 
+        next();
+    }      
+    res.send('Selamat Datang di Halaman Rahasia'); 
+
+
+
+    next();
+});
+
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
@@ -21,6 +33,11 @@ app.get('/', (req, res) => {
 app.get('/Halaman', (req, res) => {
     res.send('Halaman Page');
 } );
+
+app.get('/admin', (req, res) => {
+    res.send('Halaman Admin');
+}   );
+
 
 
 app.use((req, res, ) => {
