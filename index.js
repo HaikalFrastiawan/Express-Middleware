@@ -3,10 +3,11 @@ const app = express();
 morgan = require('morgan');
 
 
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 app.use((req, res, next) => {
-    console.log('Hello from middleware!');
+    console.log(req.timeRequest = new Date());
+    console.log(`${req.method} ${req.url}`);
     next();
 });
 
