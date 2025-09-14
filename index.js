@@ -15,9 +15,18 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
+
+
+
 app.get('/Halaman', (req, res) => {
     res.send('Halaman Page');
 } );
+
+
+app.use((req, res, ) => {
+    res.status(404).send('Halaman Tidak Ditemukan');
+
+}   );
 
 
 app.listen(3000, () => {
